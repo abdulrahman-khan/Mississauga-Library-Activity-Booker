@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Book shape -->
+  <path d="M48 16H20C17.7909 16 16 17.7909 16 20V44C16 46.2091 17.7909 48 20 48H48V16Z" fill="#FFFFFF"/>
+  <!-- Book spine -->
+  <path d="M20 16H16V48H20V16Z" fill="#D1D5DB"/>
+  <!-- Pages -->
+  <path d="M24 20H44" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 26H44" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 32H44" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Calendar icon on the book -->
+  <rect x="36" y="36" width="20" height="20" rx="4" fill="#6366F1" stroke="#FFFFFF" stroke-width="2"/>
+  <path d="M40 36V32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M48 36V32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="38" y="40" width="16" height="12" rx="2" fill="#FFFFFF"/>
+  <path d="M44 43V49" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M41 46H47" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -17,7 +17,17 @@ def load_facilities():
     """
     try:
         with open("data/all_facilities.json", "r") as f:
-            facilities = json.load(f)
+            facilities_data = json.load(f)
+        
+        # Convert nested structure to flat list
+        facilities = []
+        for center_name, center_data in facilities_data.items():
+            center_facilities = center_data.get('facilities', [])
+            for facility in center_facilities:
+                # Add center_name to each facility
+                facility['center_name'] = center_name
+                facilities.append(facility)
+        
         print(f"Loaded {len(facilities)} facilities from data/all_facilities.json")
         return facilities
     except FileNotFoundError:

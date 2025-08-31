@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facility Booking Availability</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mississauga Facility Booking</h1>
+            <p>Check availability for community centers, libraries, and recreational facilities</p>
+        </header>
+
+        <div class="controls">
+            <div class="control-group">
+                <label for="facilityType">Facility Type:</label>
+                <select id="facilityType">
+                    <option value="">All Facilities</option>
+                    <option value="Library">Libraries</option>
+                    <option value="Community Centre">Community Centers</option>
+                    <option value="Gymnasium">Gymnasiums</option>
+                    <option value="Arena">Arenas</option>
+                    <option value="Pool">Pools</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="facilityCenter">Center:</label>
+                <select id="facilityCenter">
+                    <option value="">All Centers</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="bookingDate">Date:</label>
+                <input type="date" id="bookingDate" />
+            </div>
+
+            <div class="control-group">
+                <button id="searchBtn" class="btn btn-primary">Search Availability</button>
+                <button id="refreshBtn" class="btn btn-secondary">Refresh Data</button>
+            </div>
+        </div>
+
+        <div class="status">
+            <div id="loadingIndicator" class="loading hidden">
+                <div class="spinner"></div>
+                <span>Loading facility data...</span>
+            </div>
+            <div id="statusMessage"></div>
+        </div>
+
+        <div class="results">
+            <div id="facilitiesList" class="facilities-grid">
+                <!-- Facility cards will be populated here -->
+            </div>
+        </div>
+
+        <div class="export-controls">
+            <button id="exportBtn" class="btn btn-export" disabled>Export Results</button>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 {
-  "scraped_at": "2025-08-30T23:31:22.735112",
-  "total_bookable_facilities": 6,
-  "facilities_with_availability": 5,
+  "scraped_at": "2025-08-31T05:10:38.222482",
+  "total_bookable_facilities": 18,
+  "facilities_with_availability": 17,
   "results": [
     {
       "facility_id": 64,
@@ -10,9 +10,6 @@
       "facility_type": "Gymnasium - Full",
       "max_capacity": 280,
       "time_slots": {
-        "Aug 31, 2025": [
-          "23:31 - 00:00"
-        ],
         "Sep 02, 2025": [
           "07:00 - 12:30",
           "14:30 - 20:15",
@@ -41,6 +38,56 @@
         ],
         "Sep 06, 2025": [
           "07:00 - 00:00"
+        ],
+        "Sep 07, 2025": [
+          "07:00 - 08:30",
+          "10:30 - 10:45",
+          "13:00 - 16:35",
+          "23:05 - 00:00"
+        ],
+        "Sep 08, 2025": [
+          "07:00 - 08:00",
+          "10:00 - 10:15",
+          "12:15 - 12:30",
+          "17:00 - 19:45",
+          "23:45 - 00:00"
+        ],
+        "Sep 09, 2025": [
+          "07:00 - 12:30",
+          "14:30 - 15:00",
+          "17:00 - 20:15",
+          "22:45 - 00:00"
+        ],
+        "Sep 10, 2025": [
+          "07:00 - 08:00",
+          "10:00 - 10:15",
+          "12:15 - 12:30",
+          "17:00 - 20:30",
+          "22:30 - 00:00"
+        ],
+        "Sep 11, 2025": [
+          "07:00 - 09:30",
+          "11:30 - 12:30",
+          "14:30 - 15:00",
+          "17:00 - 19:45",
+          "22:30 - 00:00"
+        ],
+        "Sep 12, 2025": [
+          "07:00 - 08:00",
+          "10:00 - 10:15",
+          "12:15 - 12:30",
+          "17:00 - 17:15",
+          "23:30 - 00:00"
+        ],
+        "Sep 13, 2025": [
+          "07:00 - 15:30",
+          "18:00 - 00:00"
+        ],
+        "Sep 14, 2025": [
+          "07:00 - 08:30",
+          "10:30 - 10:45",
+          "13:00 - 16:35",
+          "23:05 - 00:00"
         ]
       }
     },
@@ -51,10 +98,6 @@
       "facility_type": "Library - Study Room",
       "max_capacity": 5,
       "time_slots": {
-        "Aug 30, 2025": [
-          "09:30 - 12:00",
-          "16:00 - 17:00"
-        ],
         "Sep 02, 2025": [
           "09:30 - 13:30",
           "17:30 - 21:00"
@@ -71,6 +114,9 @@
         ],
         "Sep 06, 2025": [
           "09:30 - 17:00"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 17:00"
         ]
       }
     },
@@ -81,11 +127,6 @@
       "facility_type": "Library - Central Library Study Room",
       "max_capacity": 4,
       "time_slots": {
-        "Aug 30, 2025": [
-          "09:00 - 10:00",
-          "13:00 - 14:00",
-          "16:00 - 16:45"
-        ],
         "Sep 02, 2025": [
           "11:00 - 14:00",
           "16:00 - 17:30",
@@ -104,6 +145,9 @@
         ],
         "Sep 06, 2025": [
           "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
         ]
       }
     },
@@ -129,6 +173,9 @@
         ],
         "Sep 06, 2025": [
           "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
         ]
       }
     },
@@ -139,9 +186,6 @@
       "facility_type": "Library - Central Library Study Room",
       "max_capacity": 4,
       "time_slots": {
-        "Aug 30, 2025": [
-          "11:00 - 12:00"
-        ],
         "Sep 02, 2025": [
           "09:00 - 20:45"
         ],
@@ -158,6 +202,363 @@
         ],
         "Sep 06, 2025": [
           "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2136,
+      "facility_name": "Central Library - Meeting Room 205",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 18:00",
+          "19:30 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 15:00",
+          "17:00 - 17:30",
+          "18:30 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 15:00",
+          "16:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2146,
+      "facility_name": "Central Library - Meeting Room 206",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 17:00",
+          "19:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 17:00",
+          "19:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 17:00",
+          "19:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2147,
+      "facility_name": "Central Library - Meeting Room 207",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2148,
+      "facility_name": "Central Library - Meeting Room 208",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2149,
+      "facility_name": "Central Library - Meeting Room 301",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 09:30",
+          "13:30 - 14:00",
+          "16:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 10:00",
+          "12:00 - 19:00",
+          "20:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 15:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2150,
+      "facility_name": "Central Library - Meeting Room 302",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "13:00 - 18:30",
+          "20:30 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 13:00",
+          "15:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2151,
+      "facility_name": "Central Library - Meeting Room 303",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2152,
+      "facility_name": "Central Library - Meeting Room 304",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 16:00",
+          "20:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "13:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2153,
+      "facility_name": "Central Library - Meeting Room 305",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 6,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 13:30",
+          "15:30 - 18:30",
+          "20:30 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 12:30",
+          "14:30 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 09:30",
+          "11:30 - 12:00",
+          "14:00 - 19:00"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2154,
+      "facility_name": "Central Library - Meeting Room 401",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 11:00",
+          "17:00 - 18:00",
+          "20:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "13:00 - 14:00",
+          "16:00 - 18:00",
+          "20:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 11:00",
+          "13:00 - 14:00",
+          "16:00 - 18:00",
+          "20:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2155,
+      "facility_name": "Central Library - Meeting Room 402",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "09:00 - 10:00",
+          "14:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 10:00",
+          "14:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 10:00",
+          "14:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2156,
+      "facility_name": "Central Library - Meeting Room 403",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "11:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "13:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 10:45",
+          "12:45 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ],
+        "Sep 07, 2025": [
+          "13:00 - 16:45"
         ]
       }
     }

@@ -1,0 +1,66 @@
+{
+  "name": "facility-availability-checker",
+  "version": "1.0.0",
+  "description": "Desktop app for checking facility availability in Mississauga",
+  "main": "main.js",
+  "homepage": "./",
+  "scripts": {
+    "dev": "concurrently \"next dev -p 3000\" \"wait-on http://localhost:3000 && cross-env ELECTRON_DEV=true electron .\"",
+    "nextdev": "next dev -p 3000",
+    "nextbuild": "next build",
+    "nextstart": "next start",
+    "electron": "electron .",
+    "electron-dev": "ELECTRON_DEV=true electron .",
+    "build": "npm run nextbuild && electron-builder",
+    "start": "npm run nextbuild && npm run electron"
+  },
+  "keywords": [
+    "electron",
+    "booking",
+    "facility",
+    "mississauga",
+    "nextjs",
+    "react"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^10.0.0",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "wait-on": "^7.2.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.1",
+    "@mui/material": "^7.3.1",
+    "@mui/x-date-pickers": "^7.29.4",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "axios": "^1.5.0",
+    "date-fns": "^4.1.0",
+    "moment": "^2.30.1",
+    "next": "^14.0.0",
+    "puppeteer": "^21.3.6",
+    "react": "^18.2.0",
+    "react-big-calendar": "^1.19.4",
+    "react-dom": "^18.2.0"
+  },
+  "build": {
+    "appId": "com.facility-booking.app",
+    "productName": "Facility Availability Checker",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "api/**/*",
+      ".next/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ]
+  }
+}
