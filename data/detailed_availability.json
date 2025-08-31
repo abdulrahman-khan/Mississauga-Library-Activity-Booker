@@ -1,0 +1,165 @@
+{
+  "scraped_at": "2025-08-30T23:31:22.735112",
+  "total_bookable_facilities": 6,
+  "facilities_with_availability": 5,
+  "results": [
+    {
+      "facility_id": 64,
+      "facility_name": "Burnhamthorpe CC Gym Applewood Heights",
+      "center_name": "Burnhamthorpe Community Centre",
+      "facility_type": "Gymnasium - Full",
+      "max_capacity": 280,
+      "time_slots": {
+        "Aug 31, 2025": [
+          "23:31 - 00:00"
+        ],
+        "Sep 02, 2025": [
+          "07:00 - 12:30",
+          "14:30 - 20:15",
+          "22:45 - 00:00"
+        ],
+        "Sep 03, 2025": [
+          "07:00 - 08:00",
+          "10:00 - 10:15",
+          "12:15 - 12:30",
+          "14:45 - 20:30",
+          "22:30 - 00:00"
+        ],
+        "Sep 04, 2025": [
+          "07:00 - 09:30",
+          "11:30 - 12:30",
+          "14:30 - 17:30",
+          "19:30 - 21:15",
+          "22:30 - 00:00"
+        ],
+        "Sep 05, 2025": [
+          "07:00 - 08:00",
+          "10:00 - 10:15",
+          "12:15 - 12:30",
+          "14:45 - 17:15",
+          "23:30 - 00:00"
+        ],
+        "Sep 06, 2025": [
+          "07:00 - 00:00"
+        ]
+      }
+    },
+    {
+      "facility_id": 477,
+      "facility_name": "Burnhamthorpe Library - Group Study Rm 1",
+      "center_name": "Burnhamthorpe Library",
+      "facility_type": "Library - Study Room",
+      "max_capacity": 5,
+      "time_slots": {
+        "Aug 30, 2025": [
+          "09:30 - 12:00",
+          "16:00 - 17:00"
+        ],
+        "Sep 02, 2025": [
+          "09:30 - 13:30",
+          "17:30 - 21:00"
+        ],
+        "Sep 03, 2025": [
+          "09:30 - 21:00"
+        ],
+        "Sep 04, 2025": [
+          "09:30 - 16:30",
+          "18:30 - 21:00"
+        ],
+        "Sep 05, 2025": [
+          "10:00 - 18:00"
+        ],
+        "Sep 06, 2025": [
+          "09:30 - 17:00"
+        ]
+      }
+    },
+    {
+      "facility_id": 2143,
+      "facility_name": "Central Library - Meeting Room 201",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Aug 30, 2025": [
+          "09:00 - 10:00",
+          "13:00 - 14:00",
+          "16:00 - 16:45"
+        ],
+        "Sep 02, 2025": [
+          "11:00 - 14:00",
+          "16:00 - 17:30",
+          "19:30 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "11:00 - 14:00",
+          "16:00 - 19:00"
+        ],
+        "Sep 04, 2025": [
+          "11:00 - 14:00",
+          "16:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2144,
+      "facility_name": "Central Library - Meeting Room 202",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Sep 02, 2025": [
+          "11:00 - 13:00",
+          "15:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ]
+      }
+    },
+    {
+      "facility_id": 2145,
+      "facility_name": "Central Library - Meeting Room 203",
+      "center_name": "Hazel McCallion Central Library",
+      "facility_type": "Library - Central Library Study Room",
+      "max_capacity": 4,
+      "time_slots": {
+        "Aug 30, 2025": [
+          "11:00 - 12:00"
+        ],
+        "Sep 02, 2025": [
+          "09:00 - 20:45"
+        ],
+        "Sep 03, 2025": [
+          "11:00 - 17:30",
+          "19:30 - 20:45"
+        ],
+        "Sep 04, 2025": [
+          "09:00 - 15:00",
+          "17:00 - 20:45"
+        ],
+        "Sep 05, 2025": [
+          "09:00 - 17:45"
+        ],
+        "Sep 06, 2025": [
+          "09:00 - 16:45"
+        ]
+      }
+    }
+  ]
+}

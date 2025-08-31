@@ -1,0 +1,234 @@
+{
+  "headers": {
+    "sessionRefreshedOn": null,
+    "sessionExtendedCount": 0,
+    "response_code": "0000",
+    "response_message": "Successful",
+    "page_info": {
+      "order_by": "",
+      "total_records_per_page": 20,
+      "page_number": 1,
+      "total_records": 0,
+      "order_option": "ASC",
+      "total_page": 1
+    }
+  },
+  "body": {
+    "details": {
+      "resource_id": 2143,
+      "reservation_unit": 1,
+      "daily_details": [
+        {
+          "date": "2025-08-30",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "10:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "13:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "16:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-31",
+          "status": 3,
+          "times": [],
+          "holiday_desc": "2025 Aug 31 Sunday Closure - Library",
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-01",
+          "status": 3,
+          "times": [],
+          "holiday_desc": "2025 Labour Day",
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-02",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "17:30:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "19:30:00",
+              "end_time": "20:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-03",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "19:00:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-04",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "20:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-05",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "17:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-06",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "16:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-07",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-08",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-09",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-10",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-11",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-12",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-13",
+          "status": 8,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        }
+      ]
+    }
+  }
+}

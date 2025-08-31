@@ -1,0 +1,450 @@
+{
+  "headers": {
+    "sessionRefreshedOn": null,
+    "sessionExtendedCount": 0,
+    "response_code": "0000",
+    "response_message": "Successful",
+    "page_info": {
+      "order_by": "",
+      "total_records_per_page": 20,
+      "page_number": 1,
+      "total_records": 0,
+      "total_page": 1,
+      "order_option": "ASC"
+    }
+  },
+  "body": {
+    "details": {
+      "resource_id": 2143,
+      "reservation_unit": 1,
+      "daily_details": [
+        {
+          "date": "2025-07-27",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-07-28",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-07-29",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-07-30",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-07-31",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-01",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-02",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-03",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-04",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-05",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-06",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-07",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-08",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-09",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-10",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-11",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-12",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-13",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-14",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-15",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-16",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-17",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-18",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-19",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-20",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-21",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-22",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-23",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-24",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-25",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-26",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-27",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-28",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-29",
+          "status": 5,
+          "times": [],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-30",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "10:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "13:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "16:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-08-31",
+          "status": 3,
+          "times": [],
+          "holiday_desc": "2025 Aug 31 Sunday Closure - Library",
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-01",
+          "status": 3,
+          "times": [],
+          "holiday_desc": "2025 Labour Day",
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-02",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "17:30:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "19:30:00",
+              "end_time": "20:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-03",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "19:00:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-04",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "11:00:00",
+              "end_time": "14:00:00",
+              "available": true,
+              "is_cross_day": false
+            },
+            {
+              "id": 0,
+              "start_time": "16:00:00",
+              "end_time": "20:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-05",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "17:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        },
+        {
+          "date": "2025-09-06",
+          "status": 0,
+          "times": [
+            {
+              "id": 0,
+              "start_time": "09:00:00",
+              "end_time": "16:45:00",
+              "available": true,
+              "is_cross_day": false
+            }
+          ],
+          "holiday_desc": null,
+          "check_in_only": false,
+          "check_out_only": false
+        }
+      ]
+    }
+  }
+}
