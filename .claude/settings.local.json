@@ -8,7 +8,10 @@
       "Bash(npm install:*)",
       "Bash(rm:*)",
       "WebSearch",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "Bash(npm run:*)",
+      "Bash(ELECTRON_DEV=true npx electron -r ts-node/register main.ts)",
+      "Bash(npx next dev:*)"
     ],
     "deny": [],
     "ask": []

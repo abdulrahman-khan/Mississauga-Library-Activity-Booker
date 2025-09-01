@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="credits">
           <p className="photo-credit">
             Photo by{' '}
-            <a 
+            <a
               href="https://unsplash.com/@francotheshooter?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
               target="_blank"
               rel="noopener noreferrer"
@@ -13,7 +13,7 @@ export default function Footer() {
               Franco Debartolo
             </a>{' '}
             on{' '}
-            <a 
+            <a
               href="https://unsplash.com/photos/black-and-white-high-rise-building-PtfhoMcNCs0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
               target="_blank"
               rel="noopener noreferrer"
@@ -21,63 +21,65 @@ export default function Footer() {
               Unsplash
             </a>
           </p>
-          <p className="developer-credit">
-            Developed by Abdulrahman Khan
-          </p>
         </div>
       </div>
 
       <style jsx>{`
         .footer {
-          background: rgba(0, 0, 0, 0.8);
-          color: #ffffff;
-          padding: 2vh 2vw;
+          background: rgba(255, 255, 255, 0.95);
+          padding: 1.5vh 2vw;
           margin-top: auto;
-          backdrop-filter: blur(5px);
+          border-top: 1px solid #e0e0e0;
         }
         
         .footer-content {
           max-width: 1200px;
           margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .credits {
           text-align: center;
         }
         
-        .credits p {
-          margin: 0.5vh 0;
-          font-size: calc(12px + 0.2vw);
-          line-height: 1.4;
-        }
-        
         .photo-credit {
-          opacity: 0.8;
+          font-size: 0.85rem;
+          color: #666;
+          margin: 0;
         }
         
-        .developer-credit {
-          font-weight: 600;
-          color: #ffffff;
-        }
-        
-        .footer a {
-          color: #60a5fa;
+        .photo-credit a {
+          color: #0066cc;
           text-decoration: none;
-          transition: color 0.2s ease;
         }
         
-        .footer a:hover {
-          color: #93c5fd;
+        .photo-credit a:hover {
           text-decoration: underline;
         }
         
         @media (max-width: 768px) {
           .footer {
-            padding: 1.5vh 1.5vw;
+            padding: 1vh 1.5vw;
           }
           
-          .credits p {
-            font-size: calc(10px + 0.3vw);
+          .photo-credit {
+            font-size: 0.8rem;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .footer {
+            padding: 0.8vh 1vw;
+          }
+          
+          .photo-credit {
+            font-size: 0.75rem;
+            line-height: 1.3;
           }
         }
       `}</style>
     </footer>
-  );
+  )
 }

@@ -1,15 +1,17 @@
-const { app, BrowserWindow, ipcMain, shell } = require('electron');
-const path = require('path');
-const { spawn } = require('child_process');
-const ApiService = require('./api/ApiService');
+import { app, BrowserWindow, ipcMain, shell } from 'electron';
+import * as path from 'path';
+import { spawn, ChildProcess } from 'child_process';
+import ApiService from './api/ApiService';
 
 const isDev = process.env.ELECTRON_DEV === 'true';
 
 class FacilityBookingApp {
+    private mainWindow: BrowserWindow | null = null;
+    private apiService: ApiService;
+    private nextProcess: ChildProcess | null = null;
+    
     constructor() {
-        this.mainWindow = null;
         this.apiService = new ApiService();
-        this.nextProcess = null;
         
         // Fix GPU issues on Windows
         app.commandLine.appendSwitch('--disable-gpu-sandbox');
@@ -20,7 +22,7 @@ class FacilityBookingApp {
         this.setupEventHandlers();
     }
 
-    setupEventHandlers() {
+    private setupEventHandlers(): void {
         app.whenReady().then(async () => {
             if (isDev) {
                 // In development, Next.js server should already be running
@@ -62,15 +64,15 @@ class FacilityBookingApp {
             return await this.apiService.getAllFacilities();
         });
 
-        ipcMain.handle('get-facility-availability', async (event, facilityId, date) => {
+        ipcMain.handle('get-facility-availability', async (event, facilityId: string, date: string) => {
             return await this.apiService.getFacilityAvailability(facilityId, date);
         });
 
-        ipcMain.handle('get-facility-weekly-availability', async (event, facilityId, startDate, endDate) => {
+        ipcMain.handle('get-facility-weekly-availability', async (event, facilityId: string, startDate: string, endDate: string) => {
             return await this.apiService.getFacilityWeeklyAvailability(facilityId, startDate, endDate);
         });
 
-        ipcMain.handle('get-facilities-by-center', async (event, centerName) => {
+        ipcMain.handle('get-facilities-by-center', async (event, centerName: string) => {
             return await this.apiService.getFacilitiesByCenter(centerName);
         });
 
@@ -82,12 +84,12 @@ class FacilityBookingApp {
             return await this.apiService.getUniqueCenters();
         });
 
-        ipcMain.handle('open-external', async (event, url) => {
+        ipcMain.handle('open-external', async (event, url: string) => {
             await shell.openExternal(url);
         });
     }
 
-    async startNextServer() {
+    private async startNextServer(): Promise<void> {
         return new Promise((resolve, reject) => {
             // Use npm.cmd on Windows
             const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
@@ -99,7 +101,7 @@ class FacilityBookingApp {
 
             let serverReady = false;
 
-            this.nextProcess.stdout.on('data', (data) => {
+            this.nextProcess.stdout?.on('data', (data) => {
                 const output = data.toString();
                 console.log('Next.js:', output);
                 if (output.includes('ready') || output.includes('started server')) {
@@ -110,7 +112,7 @@ class FacilityBookingApp {
                 }
             });
 
-            this.nextProcess.stderr.on('data', (data) => {
+            this.nextProcess.stderr?.on('data', (data) => {
                 console.error('Next.js Error:', data.toString());
             });
 
@@ -129,19 +131,18 @@ class FacilityBookingApp {
         });
     }
 
-    async createWindow() {
+    private async createWindow(): Promise<void> {
         this.mainWindow = new BrowserWindow({
             width: 1200,
             height: 800,
             minWidth: 800,
             minHeight: 600,
-            icon: path.join(__dirname, 'public/icons/icon.svg'),
+            icon: isDev ? path.join(__dirname, 'public/icons/icon.svg') : path.join(process.resourcesPath, 'app/public/icons/icon.svg'),
             webPreferences: {
                 nodeIntegration: false,
                 contextIsolation: true,
-                preload: path.join(__dirname, 'preload.js'),
+                preload: path.join(__dirname, 'dist/preload.js'),
                 webSecurity: false, // Allow loading local resources
-                enableRemoteModule: false,
                 allowRunningInsecureContent: false
             },
             show: false,
@@ -151,20 +152,52 @@ class FacilityBookingApp {
             autoHideMenuBar: true
         });
 
-        const url = isDev ? 'http://localhost:3000' : 'http://localhost:3000';
+        const url = isDev ? 'http://localhost:3001' : 'http://localhost:3000';
+        console.log(`Loading URL: ${url}`);
         
         try {
             await this.mainWindow.loadURL(url);
+            console.log(`Successfully loaded URL: ${url}`);
         } catch (error) {
             console.error('Failed to load URL:', error);
             // Fallback to a simple error page
+            console.log('Loading fallback HTML file');
             this.mainWindow.loadFile(path.join(__dirname, 'fallback.html'));
         }
 
+        // Ensure external links open in default browser, not new Electron windows
+        this.mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+            shell.openExternal(url);
+            return { action: 'deny' };
+        });
+
+        // Also handle navigation attempts to external URLs
+        this.mainWindow.webContents.on('will-navigate', (event, url) => {
+            // Allow navigation within the app (localhost)
+            if (url.startsWith('http://localhost:3001') || url.startsWith('http://localhost:3000')) {
+                return;
+            }
+            
+            // For any other URLs, prevent navigation and open in external browser
+            event.preventDefault();
+            shell.openExternal(url);
+        });
+
         // Show window when ready to prevent visual flash
         this.mainWindow.once('ready-to-show', () => {
-            this.mainWindow.show();
+            console.log('Window ready-to-show event fired');
+            this.mainWindow?.show();
+            this.mainWindow?.focus();
         });
+
+        // Force show window after 3 seconds if not already shown
+        setTimeout(() => {
+            if (this.mainWindow && !this.mainWindow.isVisible()) {
+                console.log('Force showing window after timeout');
+                this.mainWindow.show();
+                this.mainWindow.focus();
+            }
+        }, 3000);
 
         // Development tools and debugging
         if (isDev) {

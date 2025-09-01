@@ -20,19 +20,28 @@ export default function Header() {
         }
         
         p {
-          font-size: calc(14px + 0.3vw);
+          font-size: calc(12px + 0.5vw);
           color: #666;
           margin: 0;
-          font-weight: 400;
         }
         
         @media (max-width: 768px) {
+          .header {
+            padding: 1.5vh 1.5vw;
+          }
+          
           h1 {
             font-size: calc(20px + 1.5vw);
           }
           
           p {
-            font-size: calc(12px + 0.5vw);
+            font-size: calc(11px + 0.8vw);
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .header {
+            padding: 1vh 1vw;
           }
         }
       `}</style>

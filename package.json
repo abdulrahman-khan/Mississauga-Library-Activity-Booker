@@ -2,17 +2,20 @@
   "name": "facility-availability-checker",
   "version": "1.0.0",
   "description": "Desktop app for checking facility availability in Mississauga",
-  "main": "main.js",
+  "main": "dist/main.js",
   "homepage": "./",
   "scripts": {
-    "dev": "concurrently \"next dev -p 3000\" \"wait-on http://localhost:3000 && cross-env ELECTRON_DEV=true electron .\"",
+    "dev": "concurrently \"next dev -p 3000\" \"wait-on http://localhost:3000 && cross-env ELECTRON_DEV=true electron -r ts-node/register main.ts\"",
     "nextdev": "next dev -p 3000",
     "nextbuild": "next build",
     "nextstart": "next start",
+    "tsc": "tsc --noEmit",
+    "tsc:build": "tsc",
+    "tsc:watch": "tsc --noEmit --watch",
     "electron": "electron .",
-    "electron-dev": "ELECTRON_DEV=true electron .",
-    "build": "npm run nextbuild && electron-builder",
-    "start": "npm run nextbuild && npm run electron"
+    "electron-dev": "cross-env ELECTRON_DEV=true electron -r ts-node/register main.ts",
+    "build": "npm run tsc:build && npm run nextbuild && electron-builder",
+    "start": "npm run tsc:build && npm run nextbuild && npm run electron"
   },
   "keywords": [
     "electron",
@@ -25,23 +28,23 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "autoprefixer": "^10.4.20",
     "concurrently": "^8.2.2",
     "cross-env": "^10.0.0",
     "electron": "^27.0.0",
     "electron-builder": "^24.6.4",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
     "wait-on": "^7.2.0"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.1",
-    "@mui/material": "^7.3.1",
-    "@mui/x-date-pickers": "^7.29.4",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "axios": "^1.5.0",
-    "date-fns": "^4.1.0",
     "moment": "^2.30.1",
     "next": "^14.0.0",
     "puppeteer": "^21.3.6",
@@ -53,12 +56,12 @@
     "appId": "com.facility-booking.app",
     "productName": "Facility Availability Checker",
     "directories": {
-      "output": "dist"
+      "output": "build"
     },
     "files": [
-      "main.js",
-      "api/**/*",
+      "dist/**/*",
       ".next/**/*",
+      "public/**/*",
       "node_modules/**/*",
       "package.json"
     ]

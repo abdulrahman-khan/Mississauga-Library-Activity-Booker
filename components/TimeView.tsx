@@ -1,18 +1,90 @@
+/**
+ * TimeView Component
+ * 
+ * Purpose: Displays weekly availability calendar for the selected resource
+ * 
+ * Functionality:
+ * - Shows a weekly calendar view using react-big-calendar
+ * - Displays available time slots as green events ("Available")
+ * - Shows "Book This Resource" button that opens booking site in browser
+ * - Allows navigation between weeks with persistent week state
+ * - Logs slot selection to console (popups were removed per user request)
+ * 
+ * Data Flow:
+ * 1. Receives selectedResource from parent (pages/index.tsx)
+ * 2. Calls electronAPI.getFacilityWeeklyAvailability() for the resource
+ * 3. Processes API response to create calendar events
+ * 4. Displays green blocks for available time slots
+ * 5. "Book This Resource" opens external booking URL via electronAPI.openExternal()
+ * 
+ * Calendar Features:
+ * - Week view only (no month/day views)
+ * - Business hours: 6 AM to 10 PM  
+ * - 30-minute time slot intervals
+ * - Weekend display enabled
+ */
+
 import { useState, useEffect } from 'react';
-import { Calendar, momentLocalizer } from 'react-big-calendar';
+import { Calendar, momentLocalizer, SlotInfo } from 'react-big-calendar';
 import moment from 'moment';
 import SchedulerLoadingSpinner from './SchedulerLoadingSpinner';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-// Initialize the localizer for react-big-calendar
+// Initialize the localizer for react-big-calendar with moment.js
 const localizer = momentLocalizer(moment);
 
-const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) => {
-  const [weeklyData, setWeeklyData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [events, setEvents] = useState([]);
-  const [currentWeekStart, setCurrentWeekStart] = useState(null);
+// Type definitions for API data structures and component props
+interface Resource {
+  id: string;
+  name: string;
+  type_name: string;
+  max_capacity: string;
+}
+
+interface TimeSlot {
+  start_time: string;
+  end_time: string;
+}
+
+interface DailyDetail {
+  date: string;
+  times: TimeSlot[];
+}
+
+interface WeeklyData {
+  body: {
+    details: {
+      daily_details: DailyDetail[];
+    };
+  };
+}
+
+interface CalendarEvent {
+  id: string;
+  title: string;
+  start: Date;
+  end: Date;
+  resource?: string;
+  style?: {
+    backgroundColor: string;
+    color: string;
+    border: string;
+  };
+}
+
+interface TimeViewProps {
+  selectedResource: Resource | null;
+  persistedWeekStart: Date | null;
+  onWeekStartChange: (date: Date) => void;
+}
+
+const TimeView: React.FC<TimeViewProps> = ({ selectedResource, persistedWeekStart, onWeekStartChange }) => {
+  // Component state management
+  const [weeklyData, setWeeklyData] = useState<WeeklyData | null>(null);    // Raw API response data
+  const [loading, setLoading] = useState<boolean>(false);                  // Loading indicator
+  const [error, setError] = useState<string | null>(null);                 // Error messages
+  const [events, setEvents] = useState<CalendarEvent[]>([]);               // Processed calendar events
+  const [currentWeekStart, setCurrentWeekStart] = useState<Date | null>(null); // Currently displayed week
 
   // Calculate current week start (Monday) and end (Sunday)
   const getWeekRange = (date = new Date()) => {
@@ -47,23 +119,29 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
   }, [selectedResource, persistedWeekStart]);
 
   // Fetch weekly availability data
-  const fetchWeeklyAvailability = async (startDate, endDate) => {
+  const fetchWeeklyAvailability = async (startDate: string, endDate: string): Promise<void> => {
     if (!selectedResource) return;
 
     try {
       setLoading(true);
       setError(null);
       
-      let weeklyData = null;
+      let weeklyData: WeeklyData | null = null;
       
       // Check if electronAPI is available (Electron environment)
       if (window.electronAPI && window.electronAPI.getFacilityWeeklyAvailability) {
         console.log('Loading weekly availability via Electron API...');
-        weeklyData = await window.electronAPI.getFacilityWeeklyAvailability(
+        const response = await window.electronAPI.getFacilityWeeklyAvailability(
           selectedResource.id,
           startDate,
           endDate
         );
+        
+        if (response.success) {
+          weeklyData = response.data;
+        } else {
+          throw new Error(response.error || 'Failed to fetch data');
+        }
       } else {
         // Fallback for browser development - use API route
         console.log('Electron API not available, using API route for weekly availability...');
@@ -81,8 +159,10 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
       }
       
       setWeeklyData(weeklyData);
-      const calendarEvents = convertToBigCalendarEvents(weeklyData, startDate, endDate);
-      setEvents(calendarEvents);
+      if (weeklyData) {
+        const calendarEvents = convertToBigCalendarEvents(weeklyData, startDate, endDate);
+        setEvents(calendarEvents);
+      }
     } catch (err) {
       console.error('Error fetching weekly availability:', err);
       setError('Failed to fetch weekly availability data');
@@ -92,16 +172,16 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
   };
 
   // Generate mock weekly data for browser development
-  const generateMockWeeklyData = (startDate, endDate) => {
+  const generateMockWeeklyData = (startDate: string, endDate: string): WeeklyData => {
     const start = new Date(startDate);
     const end = new Date(endDate);
-    const dailyDetails = [];
+    const dailyDetails: DailyDetail[] = [];
     
     for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
       const dateString = d.toISOString().split('T')[0];
       
       // Mock some booked times for demonstration
-      const mockTimes = [];
+      const mockTimes: TimeSlot[] = [];
       
       // Add some random booked slots
       if (d.getDay() !== 0 && d.getDay() !== 6) { // Weekdays
@@ -132,12 +212,12 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
   };
 
   // Convert API data to BigCalendar events format
-  const convertToBigCalendarEvents = (apiData, startDate, endDate) => {
+  const convertToBigCalendarEvents = (apiData: WeeklyData, startDate: string, endDate: string): CalendarEvent[] => {
     if (!apiData || !apiData.body || !apiData.body.details || !apiData.body.details.daily_details) {
       return [];
     }
 
-    const events = [];
+    const events: CalendarEvent[] = [];
     const dailyDetails = apiData.body.details.daily_details;
     
     dailyDetails.forEach((dayData, dayIndex) => {
@@ -169,8 +249,8 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
     return events;
   };
 
-  // Handle drag selection to view available times
-  const handleSelectSlot = (slotInfo) => {
+  // Handle drag selection to view available times - POPUP REMOVED
+  const handleSelectSlot = (slotInfo: SlotInfo): void => {
     try {
       console.log('User selected time slot:', slotInfo);
       
@@ -187,12 +267,11 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
         return selectedStart.isBefore(eventEnd) && selectedEnd.isAfter(eventStart);
       });
       
+      // Log the selection but don't show popup
       if (isBooked) {
-        alert(`This time slot is already booked!\n\nTime: ${moment(start).format('MM/DD/YYYY h:mm A')} - ${moment(end).format('h:mm A')}\n\nPlease select a different time or use the "Book This Resource" button to check availability on the official booking site.`);
+        console.log(`Time slot is booked: ${moment(start).format('MM/DD/YYYY h:mm A')} - ${moment(end).format('h:mm A')}`);
       } else {
-        // Show available time information
-        const availableMessage = `✅ This time slot appears to be available!\n\nResource: ${selectedResource?.name}\nTime: ${moment(start).format('MM/DD/YYYY h:mm A')} - ${moment(end).format('h:mm A')}\nCapacity: ${selectedResource?.max_capacity} people\n\nTo book this time slot, click the "Book This Resource" button above to go to the official booking website.`;
-        alert(availableMessage);
+        console.log(`Time slot appears available: ${moment(start).format('MM/DD/YYYY h:mm A')} - ${moment(end).format('h:mm A')}`);
       }
     } catch (error) {
       console.error('Error handling slot selection:', error);
@@ -200,7 +279,7 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
   };
 
   // Navigate to different weeks
-  const handleWeekNavigation = (newDate) => {
+  const handleWeekNavigation = (newDate: Date): void => {
     const weekRange = getWeekRange(newDate);
     setCurrentWeekStart(weekRange.monday);
     // Persist the selected week start
@@ -374,7 +453,7 @@ const TimeView = ({ selectedResource, persistedWeekStart, onWeekStartChange }) =
           style={{ height: '100%' }}
           view="week"
           views={['week']}
-          date={currentWeekStart}
+          date={currentWeekStart || new Date()}
           onNavigate={handleWeekNavigation}
           onDrillDown={() => {}} 
           selectable={true}

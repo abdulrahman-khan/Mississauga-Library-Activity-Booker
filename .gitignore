@@ -81,3 +81,5 @@ data/facilities_cache.json
 scraped_data.html
 raw_api_response.json
 test_availability_response.json
+
+.claude

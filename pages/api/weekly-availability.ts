@@ -1,4 +1,24 @@
-export default function handler(req, res) {
+import { NextApiRequest, NextApiResponse } from 'next';
+
+interface TimeSlot {
+  start_time: string;
+  end_time: string;
+}
+
+interface DailyDetail {
+  date: string;
+  times: TimeSlot[];
+}
+
+interface MockWeeklyResponse {
+  body: {
+    details: {
+      daily_details: DailyDetail[];
+    };
+  };
+}
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { facilityId, startDate, endDate } = req.query;
 
   if (!facilityId || !startDate || !endDate) {
@@ -9,15 +29,15 @@ export default function handler(req, res) {
 
   try {
     // Generate mock weekly data for browser development
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    const dailyDetails = [];
+    const start = new Date(startDate as string);
+    const end = new Date(endDate as string);
+    const dailyDetails: DailyDetail[] = [];
     
     for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
       const dateString = d.toISOString().split('T')[0];
       
       // Mock some booked times for demonstration
-      const mockTimes = [];
+      const mockTimes: TimeSlot[] = [];
       
       // Add some realistic booked slots
       if (d.getDay() !== 0 && d.getDay() !== 6) { // Weekdays
@@ -44,7 +64,7 @@ export default function handler(req, res) {
       });
     }
     
-    const mockData = {
+    const mockData: MockWeeklyResponse = {
       body: {
         details: {
           daily_details: dailyDetails
