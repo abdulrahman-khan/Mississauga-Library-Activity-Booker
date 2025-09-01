@@ -9,16 +9,16 @@ class FacilityBookingApp {
     private mainWindow: BrowserWindow | null = null;
     private apiService: ApiService;
     private nextProcess: ChildProcess | null = null;
-    
+
     constructor() {
         this.apiService = new ApiService();
-        
+
         // Fix GPU issues on Windows
         app.commandLine.appendSwitch('--disable-gpu-sandbox');
         app.commandLine.appendSwitch('--disable-software-rasterizer');
         app.commandLine.appendSwitch('--disable-gpu');
         app.commandLine.appendSwitch('--no-sandbox');
-        
+
         this.setupEventHandlers();
     }
 
@@ -36,7 +36,7 @@ class FacilityBookingApp {
                 await this.startNextServer();
                 await this.createWindow();
             }
-            
+
             app.on('activate', () => {
                 if (BrowserWindow.getAllWindows().length === 0) {
                     this.createWindow();
@@ -152,9 +152,10 @@ class FacilityBookingApp {
             autoHideMenuBar: true
         });
 
-        const url = isDev ? 'http://localhost:3001' : 'http://localhost:3000';
+        const url = 'http://localhost:3000';
+
         console.log(`Loading URL: ${url}`);
-        
+
         try {
             await this.mainWindow.loadURL(url);
             console.log(`Successfully loaded URL: ${url}`);
@@ -177,7 +178,7 @@ class FacilityBookingApp {
             if (url.startsWith('http://localhost:3001') || url.startsWith('http://localhost:3000')) {
                 return;
             }
-            
+
             // For any other URLs, prevent navigation and open in external browser
             event.preventDefault();
             shell.openExternal(url);
@@ -203,12 +204,12 @@ class FacilityBookingApp {
         if (isDev) {
             this.mainWindow.webContents.openDevTools();
         }
-        
+
         // Add error handling for the web contents
         this.mainWindow.webContents.on('did-fail-load', (event, errorCode, errorDescription, validatedURL) => {
             console.error('Failed to load URL:', validatedURL, 'Error:', errorDescription);
         });
-        
+
         this.mainWindow.webContents.on('crashed', () => {
             console.error('Web contents crashed');
         });
